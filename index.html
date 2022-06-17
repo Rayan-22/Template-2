@@ -1,1087 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasper | Template-2</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kasper | Template Two</title>
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="css/normalize.css" />
     <!-- Font Awesome Library -->
-    <link rel="stylesheet" href="CSS/all.min.css" />
-    <!-- Render All The Elements Normally -->
-    <link rel="stylesheet" href="CSS/normalize.css" />
-    <!-- The Main CSS File -->
-    <link rel="stylesheet" href="CSS/kasper.css" />
-    <!-- CSS Styling -->
-    <style>
-      /* Start Variables */
-:root {
-    --main-color: #19c8fa;
-    --transparent-color: rgb(15 116 143 / 40%);
-    --text-color: rgb(0, 0, 0);
-    --section-padding: 100px;
-}
-/* End Variables */
-/* Start Global Rules */
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  /* .logo img {
-      width: 30px;
-      height: 30px;
-  } */
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    font-family: "Open Sans", sans-serif;
-    /* background-color: black; */
-  }
-  ul {
-    list-style: none;
-  }
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* Small */
-  @media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
-  }
-  /* Medium */
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  /* Large */
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
-  /* End Global Rules */
-  /* Start Components */
-  .section {
-    padding: 100px;
-  }
-  .main-heading {
-    text-align: center;
-  }
-  .main-heading h2 {
-    font-weight: normal;
-    font-size: 40px;
-    position: relative;
-    margin-bottom: 60px;
-    text-transform: uppercase;
-
-  }
-  .main-heading h2::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: black;
-    width: 140px;
-    height: 4px;
-    bottom: -30px;
-
-  }
-  .main-heading h2::after {
-    content: "";
-    position: absolute;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 16px;
-    bottom: -38px;
-  }
-  .main-heading p {
-    width: 550px;
-    margin: 0px auto 100px;
-    max-width: 100%;
-    line-height: 2;
-    color: var(--text-color);
-  }
-  /* End Component */
-  /* Start Header */ 
-  header {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-  }
-  header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    min-height: 96px;
-  }
-  header .container::after {
-      content: "";
-      position: absolute;
-      background-color: #a2a2a2;
-      width: calc(100% - 30px);
-      height: 1px;
-      bottom: 0;
-      left: 15px;
-  }
-  header nav {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  header nav .toggle-menu {
-    color: white;
-    font-size: 20px;
-  }
-  @media (min-width:768px) {
-    header nav .toggle-menu {
-      display: none;
-    }
-  }
-  header nav ul {
-      display: flex;
-  }
-  @media (max-width: 767px) {
-    header nav ul {
-      display: none;
-    }
-  }
-  header nav .toggle-menu:hover + ul {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgb(0 0 0 / 50%);
-  }
-  header nav ul a {
-    padding: 20px !important;
-  }
-  header nav ul li a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.4s;
-      padding: 40px 10px;
-      position: relative;
-      z-index: 2;
-  }
-  header nav ul li a.active,
-  header nav ul li a:hover {
-      color: var(--main-color);
-      border-bottom: 2px solid var(--main-color);
-  }
-  header nav .form {
-      width: 40px;
-      height: 30px;
-      position: relative;
-      margin-left: 40px;
-      border-left: 2px solid white;
-  }
-  header nav .form i {
-      position: absolute;
-      font-size: 20px;
-      color: white;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-  }
-  /* End Header */
-  /* Start Landing Section */
-  .landing {
-    min-height: 100vh;
-    background-color: #1f2021;
-    background-image: url('../Images/Cowl.jpg');
-    background-size: cover;
-    position: relative;
-  }
-  .landing .overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 30%);
-  }
-  .landing .text {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 50%;
-    padding: 40px;
-    background-color: var(--transparent-color);
-    color: white;
-    display: flex;
-    justify-content: flex-end;
-  }
-  @media (max-width: 767px) {
-    .landing .text {
-      width: 100%;
-    }
-    .landing .text .content {
-      max-width: 100%;
-    }
-  }
-  .landing .text .content {
-    max-width: 600px;
-  }
-  .landing .text h2 {
-    font-size: 32px;
-    font-weight: normal;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  .landing .text p {
-    font-size: 14px;
-    line-height: 2;
-  }
-  .landing .change-background {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 60px;
-  }
-  @media (max-width: 767px) {
-    .landing .change-background {
-      display: none;
-    }
-  }
-  .landing .fa-angle-left {
-    left: 30px;
-  }
-  .landing .fa-angle-right {
-    right: 30px;
-  }
-  .landing .bullets {
-    position: absolute;
-    width: 160px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 30px;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .landing .bullets li {
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--main-color);
-    border-radius: 50%;
-  }
-  .landing .bullets li.active {
-    background-color: var(--main-color);
-  }
-  /* End Landing Section */
-  /* Start Services Section */
-  .services {
-      padding: var(--section-padding) 0px;
-    }
-    .services .box {
-      display: flex;
-    }
-    .services .box i {
-      margin-right: 50px;
-    }
-    @media (max-width: 767px) {
-      .services .box {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 40px;
-      }
-      .services .box i {
-        margin: 0px 0px 20px;
-      }
-    }
-    .services .box h3 {
-      margin-bottom: 30px;
-      color: var(--main-color);
-    }
-    .services .box p {
-      line-height: 2;
-      color: var(--text-color);
-    }
-    @media (min-width: 768px) {
-      .services .services-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(450px ,1fr));
-        grid-column-gap: 40px;
-        grid-row-gap: 60px;
-      }
-    }
-  /* End Services Section */
-  /* Start Styling Design Section */
-  .design {
-    padding: var(--section-padding) 0px;
-    height: 600px;
-    position: relative;
-    background-image: url("../Images/design-features.jpg");
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .design::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 30%);
-  }
-  .design .image,
-  .design .text {
-    position: relative;
-    z-index: 2;
-    flex: 1;
-  }
-  .design .image {
-    text-align: center;
-  }
-  @media (max-width: 767px) {
-    .design .image {
-      display: none;
-    }
-  }
-  .design .image img {
-    position: relative;
-    bottom: -150px;
-  }
-  .design .text {
-    color: white;
-    padding: 50px;
-    background-color: var(--transparent-color);
-  }
-  .design .text h2 {
-    font-weight: normal;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-  }
-  .design .text ul li {
-    padding: 16px 0px;
-  }
-  .design .text ul li::before {
-    font-family: 'Font Awesome 5 Free';
-    content: '\e163';
-    font-weight: 900;
-    margin-right: 20px;
-    position: relative;
-    top: 1px;
-  }
-  /* End Styling Design Section */
-  /* Start Styling Portfolio Section */
-  .portfolio {
-    padding: var(--section-padding) 0px;
-  }
-  .portfolio .shuffle {
-    display: flex;
-    justify-content: center;
-  }
-  .portfolio .shuffle li {
-    padding: 10px;
-  }
-  .portfolio .shuffle li.active {
-    text-align: center;
-    background-color: var(--main-color);
-    color: white;
-  }
-  .portfolio .images-holder {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 40px;
-  }
-  .portfolio .images-holder .box {
-    overflow: hidden;
-    position: relative;
-  }
-  .portfolio .images-holder .box:hover .caption {
-    bottom: 0;
-  }
-  .portfolio .images-holder .box:hover img {
-    transform: rotate(2deg) scale(1.2);
-  }
-  @media (min-width: 768px) {
-    .portfolio .images-holder .box {
-      flex-basis: 50%;
-    }
-  }
-  @media (min-width: 1199px) {
-    .portfolio .images-holder .box {
-      flex-basis: 25%;
-    }
-  }
-  .portfolio .images-holder .box img {
-    max-width: 100%;
-    transition: 0.4s;
-  }
-  .portfolio .images-holder .box .caption {
-    position: absolute;
-    left: 0;
-    padding: 20px;
-    background-color: white;
-    width: 100%;
-    transition: 0.4s;
-    bottom: -100%;
-  }
-  .portfolio .images-holder .box:hover .caption h4 {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  .portfolio .images-holder .box:hover .caption p {
-    text-align: center;
-    color: var(--main-color);
-  }
-  .portfolio .more {
-    text-align: center;
-    text-decoration: none;
-    background-color: var(--main-color);
-    color: white;
-    padding: 16px 20px;
-    display: block;
-    width: fit-content;
-    margin: 40px auto;
-    text-transform: uppercase;
-    transition: 0.2s;
-  }
-  .portfolio .more:hover {
-    transform: scale(1.1);
-  }
-/* End Styling Portfolio Section */
-/* Start Styling Video Section */
-.video {
-  position: relative;
-}
-.video::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.video video {
-  width: 100%;
-}
-.video .text {
-  text-align: center;
-  padding: 40px;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--transparent-color);
-  color: white;
-}
-@media (max-width: 767px) {
-  .video .text {
-    height: 80%;
-  }
-  .video .text h2 {
-    font-size: 20px;
-    margin: 0px 0px 20px;
-  }
-  .video .text p {
-    margin-top: -20px;
-  }
-}
-.video .text h2 {
-  margin-bottom: 40px;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-.video .text p {
-  text-transform: capitalize;
-}
-.video .text button {
-  margin-top: 40px;
-  padding: 10px 20px;
-  color: white;
-  background-color: black;
-  border: 2px solid transparent;
-  text-transform: uppercase;
-}
-@media (max-width: 420px) {
-  .video .text button {
-    margin-top: 20px;
-  }
-}
-/* End Styling Video Section */
-/* Start Styling About Us Section */
-.about {
-  padding-top: var(--section-padding);
-  overflow: hidden;
-  text-align: center;
-}
-
-.about img {
-  position: relative;
-  bottom: -120px;
-  margin-top: -120px;
-  max-width: 100%;
-}
-@media (max-width: 767px) {
-  .about img {
-    bottom: -40px;
-    margin-top: -40px;
-  }
-}
-/* End Styling About Us Section */
-/* Start Statistics Section */
-.stats {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
-  text-align: center;
-  background-image: url("../images/stats.png");
-  background-size: cover;
-  position: relative;
-}
-.stats::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0 0 0 / 70%);
-}
-.stats .container {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-}
-.stats .container .box {
-  color: white;
-  padding: 50px;
-  background-color: var(--transparent-color);
-}
-@media (max-width: 767px) {
-  .stats .container .box {
-    flex-basis: 100%;
-  }
-}
-@media (min-width: 768px) {
-  .stats .container .box {
-    flex-basis: 50%;
-  }
-}
-@media (min-width: 992px) {
-  .stats .container .box {
-    flex-basis: 25%;
-  }
-}
-.stats .container .box i {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  background-color: black;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin: 0px auto 40px;
-}
-.stats .container .box .number {
-  font-size: 60px;
-  font-weight: bold;
-  margin: 0 0 20px 0;
-}
-.stats .container .box p {
-  font-size: 14px;
-}
-/* End Statistics Section */
-/* Start Skills Section */
-.our-skills {
-  padding: var(--section-padding) 0px;
-}
-.our-skills .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-@media (min-width: 992px) {
-  .our-skills .container > div {
-    flex-basis: 45%;
-  }
-}
-.our-skills .container > div > h3 {
-  margin: 0 0 30px;
-  font-weight: normal;
-  text-align: center;
-  text-transform: uppercase;
-}
-.our-skills .container > div > p {
-  color: #777;
-  line-height: 2;
-  text-align: center;
-  margin-bottom: 60px;
-}
-.our-skills .testimonians .content {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-.our-skills .testimonians .content img {
-  width: 100px;
-  border-radius: 50%;
-  margin-right: 50px;
-}
-@media (max-width: 767px) {
-  .our-skills .testimonians .content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .our-skills .testimonians .content img {
-    margin: 0 auto 20px;
-  }
-}
-.our-skills .testimonians .text {
-  line-height: 1.8;
-  border-bottom: 1px solid #ccc;
-}
-.our-skills .testimonians .text p {
-  color: #777;
-  text-align: right;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-.our-skills .testimonians .bullets {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.our-skills .testimonians .bullets li {
-  width: 14px;
-  height: 14px;
-  border: 1px solid #aaa;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.our-skills .testimonians .bullets li.active {
-  background-color: var(--main-color);
-  border-color: var(--main-color);
-}
-.our-skills .skills .prog-holder {
-  margin-bottom: 40px;
-}
-.our-skills .prog-holder h4 {
-  margin-bottom: 15px;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-.our-skills .prog-holder .prog {
-  background-color: #dedadc;
-  height: 30px;
-}
-.our-skills .prog-holder .prog span {
-  display: block;
-  background-color: var(--main-color);
-  height: 100%;
-  position: relative;
-}
-.our-skills .prog-holder .prog span::before {
-  content: attr(data-progress);
-  position: absolute;
-  background-color: black;
-  width: 40px;
-  padding: 4px 0px;
-  text-align: center;
-  color: white;
-  right: -19px;
-  top: -40px;
-  border-radius: 4px;
-}
-.our-skills .prog-holder .prog span::after {
-  content: "";
-  position: absolute;
-  border: 8px solid;
-  border-color: black transparent transparent ;
-  right: -8px;
-  top: -14px;
-}
-/* End Skills Section */
-/* Start Styling Quote Section*/
-.quote {
-  padding: var(--section-padding) 0px;
-  background-image: url("../Images/quote.jpg");
-  background-size: cover;
-  position: relative;
-  color: white;
-  text-align: center;
-}
-.quote::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0 0 0 / 80%);
-}
-.quote .container {
-  position: relative;
-}
-.quote q {
-    font-size: 30px;
-    margin-bottom: 20px;
-    display: block;
-}
-.quote q::before {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f10d';
-  font-weight: 800;
-  margin-right: 20px;
-  position: relative;
-  top: 1px;
-}
-.quote q::after {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f10e';
-  font-weight: 800;
-  margin-right: 20px;
-  position: relative;
-  top: 1px;
-}
-/* End Styling Quote Section*/
-/* Start Styling Pricing Section */
-.pricing {
-  padding: var(--section-padding) 0px;
-}
-.pricing .plans {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
-.pricing .plans .plan {
-  background-color: #fcfcfc;
-  text-align: center;
-}
-.pricing .plans .plan .head {
-  padding: 40px 20px;
-  border-top: 2px solid var(--main-color);
-  border-bottom: 2px solid var(--main-color);
-}
-.pricing .plans .plan .head h3 {
-  font-weight: normal;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-}
-.pricing .plans .plan .head .currency {
-  font-size: 60px;
-  font-weight: bold;
-  position: relative;
-}
-.pricing .plans .plan .head .currency::before {
-  content: "$";
-  position: absolute;
-  font-size: 26px;
-  font-weight: normal;
-  left: -20px;
-  top: 0;
-}
-.pricing .plans .plan .head .currency::after {
-  content: "/Mo";
-  position: absolute;
-  font-size: 26px;
-  font-weight: normal;
-  right: -50px;
-  bottom: 0;
-}
-.pricing .plans .plan ul {
-  border-bottom: 2px solid var(--main-color);
-}
-.pricing .plans .plan ul li {
-  padding: 20px;
-  position: relative;
-}
-.pricing .plans .plan ul li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  width: 140px;
-  height: 1px;
-  background-color: var(--main-color);
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -0px;
-}
-.pricing .plans .plan a {
-  display: block;
-  width: fit-content;
-  text-decoration: none;
-  color: white;
-  background-color: var(--main-color);
-  padding: 10px 20px;
-  margin: 20px auto;
-}
-.pricing .contact-text {
-  text-align: center;
-  margin: 60px auto 20px;
-  font-size: 20px;
-}
-.pricing .contact-link {
-  display: block;
-  text-decoration: none;
-  width: fit-content;
-  margin: 20px auto;
-  color: white;
-  background-color: var(--main-color);
-  padding: 10px 30px;
-}
-/* End Styling Pricing Section */
-/* Start Styling Subscribtion Section */
-.subscribe {
-  padding: var(--section-padding) 0px;
-  background-image: url("../Images/subscribe.jpg");
-  background-size: cover;
-  position: relative;
-  color: white;
-}
-.subscribe::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0 0 0 / 40%);
-}
-.subscribe .container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 991px) {
-  .subscribe .container {
-    flex-direction: column;
-  }
-}
-.subscribe form {
-  display: flex;
-  position: relative;
-  width: 600px;
-  max-width: 100%;
-}
-.subscribe form input[type="email"] {
-  color: white;
-  border: 1px solid white;
-  border-right: none;
-  background: none;
-  padding: 20px 20px 20px 60px;
-  caret-color: var(--main-color);
-  width: calc(100% - 120px);
-}
-.subscribe form input[type="submit"] {
-  width: 120px;
-  background-color: var(--main-color);
-  color: white;
-  padding: 10px 20px;
-  border: 1px solid white;
-  border-left: none;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.subscribe form ::placeholder {
-  color: white;
-}
-.subscribe form input[type="email"]:focus,
-.subscribe form input[type="submit"]:focus {
-  outline: none;
-}
-.subscribe form i {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 26px;
-}
-.subscribe p {
-  line-height: 2;
-  margin-left: 40px;
-  text-align: center;
-}
-@media (max-width: 991px) {
-  .subscribe p {
-    margin: 40px 0 0;
-  }
-}
-/* End Styling Subscribtion Section */
-/* Start Styling Contct Us Section */
-.contact {
-  padding: var(--section-padding) 20px;
-}
-.contact .content {
-  display: flex;
-  justify-content: space-between;
-}
-@media (max-width: 767px) {
-  .contact .content {
-    flex-direction: column;
-  }
-}
-.contact .content form {
-  flex-basis: 70%;
-}
-.contact .content form .main-input {
-  padding: 20px;
-  display: block;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  width: 100%;
-}
-.contact .content form .main-input:focus {
-  outline: none;
-}
-.contact .content form textarea.main-input {
-  height: 200px;
-}
-.contact .content form input[type="submit"] {
-  padding: 20px;
-  background-color: var(--main-color);
-  color: white;
-  border: none;
-  display: flex;
-  margin-left: auto;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.contact .content .info {
-  flex-basis: 20%;
-}
-@media (max-width: 767px) {
-  .contact .content .info {
-    order: -2;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-}
-.contact .content .info h4 {
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  font-weight: bold;
-  font-size: 18px;
-}
-.contact .content .info .phone {
-  display: block;
-  color: var(--text-color);
-  margin-bottom: 10px;
-}
-.contact .content .info h4:nth-of-type(2) {
-  margin-top: 60px;
-}
-@media (max-width: 767px) {
-  .contact .content .info h4:nth-of-type(2) {
-    margin-top: 20px;
-  }
-}
-.contact .content .info address {
-  color: var(--text-color);
-  line-height: 2;
-}
-@media (max-width: 767px) {
-  .contact .content .info address {
-    margin-bottom: 40px;
-  }
-}
-/* End Styling Contct Us Section */
-/* Start Styling Footer Section */
-.footer {
-  padding: calc(var(--section-padding)) 0;
-  background-image: url("../Images/subscribe.jpg");
-  background-size: cover;
-  position: relative;
-  color: white;
-  text-align: center;
-}
-.footer::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0 0 0 / 40%);
-}
-.footer .container {
-  position: relative;
-}
-.footer img {
-  margin-bottom: 20px;
-}
-.footer p:not(.copyright) {
-  text-transform: uppercase;
-  padding: 20px;
-  border-bottom: 2px solid white;
-  font-size: 22px;
-  width: fit-content;
-  margin: 20px auto;
-}
-.footer .social-icons i {
-  padding: 10px 20px;
-}
-.footer .copyright {
-  margin-top: 60px;
-}
-.footer .copyright span {
-  font-weight: bold;
-  color: var(--main-color);
-}
-/* End Styling Footer Section */
-    </style>
-    <!-- Fonts Files From Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Main Template CSS File -->
+    <link rel="stylesheet" href="css/kasper.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&#038;display=swap" rel="stylesheet" />
+  </head>
+  <body>
     <!-- Start Header -->
     <header>
-    <div class="container">
-    <a href="#" class="logo">
-      <img src="Images/logo.png" alt="Logo" />
-    </a>
-    <nav>
-      <i class="fas fa-bars toggle-menu"></i>
-      <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="form">
-          <i class="fas fa-search"></i>
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="images/logo.png" alt="Logo" />
+        </a>
+        <nav>
+          <i class="fas fa-bars toggle-menu"></i>
+          <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="form">
+            <i class="fas fa-search"></i>
+          </div>
+        </nav>
       </div>
-    </nav>
-    </div>
     </header>
     <!-- End Header -->
-    <!-- Start Landing Section -->
+    <!-- Start Landing -->
     <div class="landing">
       <div class="overlay"></div>
       <div class="text">
         <div class="content">
-          <h2>Hello World!<br>
-            We Are Kasper We Make Art.</h2>
+          <h2>
+            Hello World!<br />
+            We Are Kasper We Make Art.
+          </h2>
           <p>
             Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt
             nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
@@ -1089,18 +56,17 @@
           </p>
         </div>
       </div>
-      <i class="fas fa-angle-left change-background fa-tx"></i>
-      <i class="fas fa-angle-right change-background fa-tx"></i>
+      <i class="fas fa-angle-left change-background fa-2x"></i>
+      <i class="fas fa-angle-right change-background fa-2x"></i>
       <ul class="bullets">
         <li></li>
         <li class="active"></li>
         <li></li>
       </ul>
     </div>
-    <!-- End Landing Section -->
-    <!-- Start Services Section -->
-    <div class="services" id="services">
-      <!-- The container Of The Entire Services Section -->
+    <!-- End Landing -->
+    <!-- Start Services -->
+    <div class="services">
       <div class="container">
         <div class="main-heading">
           <h2>Services</h2>
@@ -1109,10 +75,8 @@
             tincidunt.
           </p>
         </div>
-        <!-- The container Of The Boxes -->
         <div class="services-container">
-          <!-- First Services Box -->
-          <div class="box">
+          <div class="srv-box">
             <i class="fas fa-desktop fa-3x"></i>
             <div class="text">
               <h3>Vorem amet intuitive</h3>
@@ -1122,8 +86,7 @@
               </p>
             </div>
           </div>
-          <!-- Second Services Box -->
-          <div class="box">
+          <div class="srv-box">
             <i class="fas fa-cog fa-3x"></i>
             <div class="text">
               <h3>Vorem amet intuitive</h3>
@@ -1133,8 +96,7 @@
               </p>
             </div>
           </div>
-          <!-- Third Services Box -->
-          <div class="box">
+          <div class="srv-box">
             <i class="fas fa-pencil-ruler fa-3x"></i>
             <div class="text">
               <h3>Vorem amet intuitive</h3>
@@ -1144,8 +106,7 @@
               </p>
             </div>
           </div>
-          <!-- Fourth Services Box -->
-          <div class="box">
+          <div class="srv-box">
             <i class="fas fa-camera fa-3x"></i>
             <div class="text">
               <h3>Vorem amet intuitive</h3>
@@ -1158,8 +119,8 @@
         </div>
       </div>
     </div>
-    <!-- End Services Section -->
-    <!-- Start Design Section -->
+    <!-- End Services -->
+    <!-- Start Design -->
     <div class="design">
       <div class="image">
         <img src="images/mobile.png" alt="Mobile" />
@@ -1174,9 +135,9 @@
         </ul>
       </div>
     </div>
-    <!-- End Design Section -->
-    <!-- Start Portfolio Section -->
-    <div class="portfolio" id="portfolio">
+    <!-- End Design -->
+    <!-- Start Portfolio -->
+    <div class="portfolio">
       <div class="container">
         <div class="main-heading">
           <h2>Portfolio</h2>
@@ -1188,88 +149,86 @@
         <ul class="shuffle">
           <li class="active">All</li>
           <li>App</li>
-          <li>Phot</li>
+          <li>Photo</li>
           <li>Web</li>
           <li>Print</li>
         </ul>
       </div>
-      <div class="images-holder">
+      <div class="imgs-container">
         <div class="box">
-          <img src="Images/shuffle-01.jpg" alt="">
+          <img src="images/shuffle-01.jpg" alt="" />
           <div class="caption">
             <h4>Awesome Image</h4>
             <p>Photography</p>
           </div>
         </div>
         <div class="box">
-          <img src="Images/shuffle-02.jpg" alt="">
+          <img src="images/shuffle-02.jpg" alt="" />
           <div class="caption">
             <h4>Awesome Image</h4>
             <p>Photography</p>
           </div>
         </div>
         <div class="box">
-          <img src="Images/shuffle-03.jpg" alt="">
+          <img src="images/shuffle-03.jpg" alt="" />
           <div class="caption">
             <h4>Awesome Image</h4>
             <p>Photography</p>
           </div>
         </div>
         <div class="box">
-          <img src="Images/shuffle-04.jpg" alt="">
+          <img src="images/shuffle-04.jpg" alt="" />
           <div class="caption">
             <h4>Awesome Image</h4>
             <p>Photography</p>
           </div>
         </div>
         <div class="box">
-          <img src="Images/shuffle-05.jpg" alt="">
+          <img src="images/shuffle-05.jpg" alt="" />
           <div class="caption">
             <h4>Awesome Image</h4>
             <p>Photography</p>
           </div>
         </div>
         <div class="box">
-          <img src="Images/shuffle-06.jpg" alt="">
+          <img src="images/shuffle-06.jpg" alt="" />
           <div class="caption">
             <h4>Awesome Image</h4>
             <p>Photography</p>
           </div>
         </div>
         <div class="box">
-          <img src="Images/shuffle-07.jpg" alt="">
+          <img src="images/shuffle-07.jpg" alt="" />
           <div class="caption">
             <h4>Awesome Image</h4>
             <p>Photography</p>
           </div>
         </div>
         <div class="box">
-          <img src="Images/shuffle-08.jpg" alt="">
+          <img src="images/shuffle-08.jpg" alt="" />
           <div class="caption">
             <h4>Awesome Image</h4>
             <p>Photography</p>
           </div>
         </div>
       </div>
-      <a href="" class="more">more</a>
+      <a href="#" class="more">More</a>
     </div>
-    <!-- End Portfolio Section -->
-    <!-- Start Video Section -->
+    <!-- End Portfolio -->
+    <!-- Start Video -->
     <div class="video">
       <video autoplay muted loop>
-        <source src="Images/awesome-video.mp4" type="video/mp4">
+        <source src="images/awesome-video.mp4" type="video/mp4" />
       </video>
       <div class="text">
-        <h2>
-          Super awesome video here
-        </h2>
-        <p>It's all you need</p>
-        <button>See more</button>
+        <h2>Super Awesome Video Here</h2>
+        <p>Its All You Need</p>
+        <button>See More</button>
       </div>
     </div>
-    <!-- End Video Section -->
-    <!-- Start About Us Section -->
-    <div class="about" id="about">
+    <!-- End Video -->
+    <!-- Start About -->
+    <div class="about">
       <div class="container">
         <div class="main-heading">
           <h2>About Us</h2>
@@ -1281,14 +240,14 @@
         <img src="images/about.png" alt="" />
       </div>
     </div>
-    <!-- End About Us Section -->
-    <!-- Start Statistics Section -->
+    <!-- End About -->
+    <!-- Start Stats -->
     <div class="stats">
       <div class="container">
         <div class="box">
           <i class="fas fa-mug-hot"></i>
           <div class="number">1.236</div>
-          <p>Coffe Drinks</p>
+          <p>Coffee Drinks</p>
         </div>
         <div class="box">
           <i class="far fa-folder"></i>
@@ -1297,7 +256,7 @@
         </div>
         <div class="box">
           <i class="far fa-envelope"></i>
-          <div class="number">1.746</div>
+          <div class="number">1,743</div>
           <p>Mail Sent</p>
         </div>
         <div class="box">
@@ -1307,12 +266,12 @@
         </div>
       </div>
     </div>
-    <!-- End Statistics Section -->
-    <!-- Start Skills Section -->
+    <!-- End Stats -->
+    <!-- Start Skills -->
     <div class="our-skills">
       <div class="container">
-        <div class="testimonians">
-          <h3>Testimonians</h3>
+        <div class="testimonials">
+          <h3>Testimonials</h3>
           <p>
             Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
             tincidunt.
@@ -1352,9 +311,9 @@
             </div>
           </div>
           <div class="prog-holder">
-            <h4>HTML &amp; CSS</h4>
+            <h4>Html &amp; Css</h4>
             <div class="prog">
-              <span style="width: 86%" data-progress="86%"></span>
+              <span style="width: 85%" data-progress="85%"></span>
             </div>
           </div>
           <div class="prog-holder">
@@ -1364,25 +323,25 @@
             </div>
           </div>
           <div class="prog-holder">
-            <h4>PHP</h4>
+            <h4>Php</h4>
             <div class="prog">
-              <span style="width: 82%" data-progress="82%"></span>
+              <span style="width: 90%" data-progress="90%"></span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End Skills Section -->
-    <!-- Start Quote Secttion -->
+    <!-- End Skills -->
+    <!-- Start Quote -->
     <div class="quote">
       <div class="container">
-        <q>accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt. </q>
+        <q>accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</q>
         <span>John Doe</span>
       </div>
     </div>
-    <!-- End Quote Secttion -->
-    <!-- Start Pricing Section -->
-    <div class="pricing" id="pricing">
+    <!-- End Quote -->
+    <!-- Start Pricing -->
+    <div class="pricing">
       <div class="container">
         <div class="main-heading">
           <h2>Pricing</h2>
@@ -1395,7 +354,7 @@
           <div class="plan">
             <div class="head">
               <h3>Basic</h3>
-              <span class="currency">19</span>
+              <span>19</span>
             </div>
             <ul>
               <li>Feature No 1</li>
@@ -1409,8 +368,8 @@
           </div>
           <div class="plan">
             <div class="head">
-              <h3>Premum</h3>
-              <span class="currency">29</span>
+              <h3>Premium</h3>
+              <span>29</span>
             </div>
             <ul>
               <li>Feature No 1</li>
@@ -1425,7 +384,7 @@
           <div class="plan">
             <div class="head">
               <h3>Pro</h3>
-              <span class="currency">39</span>
+              <span>39</span>
             </div>
             <ul>
               <li>Feature No 1</li>
@@ -1439,8 +398,8 @@
           </div>
           <div class="plan">
             <div class="head">
-              <h3>Plantinum</h3>
-              <span class="currency">49</span>
+              <h3>Platinum</h3>
+              <span>49</span>
             </div>
             <ul>
               <li>Feature No 1</li>
@@ -1453,28 +412,27 @@
             </div>
           </div>
         </div>
-        <p class="contact-text">Contact us if you've got speacial request</p>
+        <p class="contact-text">Contact us if you have special request</p>
         <a href="#" class="contact-link">Contact Us</a>
       </div>
     </div>
-    <!-- End Pricing Section -->
-    <!-- Start Subscribtion Section -->
+    <!-- End Pricing -->
+    <!-- Start Subscribe -->
     <div class="subscribe">
-    <div class="container">
-      <form>
-        <i class="far fa-envelope fa-lg"></i>
-        <input type="email" name="mail" id="" placeholder="Enter Your Email">
-        <input type="submit" value="Subscribe">
-      </form>
-      <p>
-        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
-        tincidunt.
-      </p>
+      <div class="container">
+        <form action="">
+          <i class="far fa-envelope fa-lg"></i>
+          <input type="email" name="mail" placeholder="Your Email" />
+          <input type="submit" value="Subscribe" />
+        </form>
+        <p>
+          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blan dit aliquet elit, eget tincidunt.
+        </p>
+      </div>
     </div>
-  </div>
-    <!-- End Subscribtion Section -->
-    <!-- Start Contact Us Section -->
-    <div class="contact" id="contact">
+    <!-- End Subscribe -->
+    <!-- Start Contact -->
+    <div class="contact">
       <div class="container">
         <div class="main-heading">
           <h2>Contact Us</h2>
@@ -1483,43 +441,38 @@
             tincidunt.
           </p>
         </div>
-      </div>
-      <div class="content">
-        <form action="">
-          <input class="main-input" type="text" name="name" placeholder="Enter You Name">
-          <input class="main-input" type="email" name="name" placeholder="Enter You Name">
-          <textarea class="main-input" name="massage" placeholder="Enter Your Massage"></textarea>
-          <input type="submit" value="Send Massage">
-        </form>
-        <div class="info">
-          <h4>Get In Touch</h4>
-          <span class="phone">+00 123.456.789</span>
-          <span class="phone">+00 123.456.789</span>
-          <h4>Where We Are</h4>
-          <address>
-            Awesome Address 17<br />
-            New York, NYC<br />
-            123-4567-890<br />
-            USA
-          </address>
+        <div class="content">
+          <form action="">
+            <input class="main-input" type="text" name="name" placeholder="Your Name" />
+            <input class="main-input" type="email" name="mail" placeholder="Your Email" />
+            <textarea class="main-input" name="message" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" />
+          </form>
+          <div class="info">
+            <h4>Get In Touch</h4>
+            <span class="phone">+00 123.456.789</span>
+            <span class="phone">+00 123.456.789</span>
+            <h4>Where We Are</h4>
+            <address>Awesome Address 17<br />New York, NYC<br />123-4567-890<br />USA</address>
+          </div>
         </div>
       </div>
     </div>
-    <!-- End Contact Us Section -->
-    <!-- Start Footer Section -->
+    <!-- End Contact -->
+    <!-- Start Footer -->
     <div class="footer">
       <div class="container">
-        <img src="Images/logo.png" alt="Logo">
+        <img src="images/logo.png" alt="Logo" />
         <p>We Are Social</p>
         <div class="social-icons">
           <i class="fab fa-facebook-f"></i>
           <i class="fab fa-twitter"></i>
-          <i class="fa-brands fa-instagram"></i>
+          <i class="fas fa-home"></i>
           <i class="fab fa-linkedin"></i>
         </div>
-        <p class="copyright">&copy; 2021 <span>Kasper</span>All Rights Reserved</p>
+        <p class="copyright">&copy; 2021 <span>Kasper</span> All Right Reserved</p>
       </div>
     </div>
-    <!-- End Footer Section -->
-</body>
+    <!-- End Footer -->
+  </body>
 </html>
